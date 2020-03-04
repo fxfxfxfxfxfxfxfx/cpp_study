@@ -1,0 +1,26 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+int main()
+{
+	int a, b, c;
+	double x, y, z;
+	//没有声明变量c
+	cout << "请输入两个整数:\n";
+	cin >> a >> b;
+	c = a + b;
+	cout << "输入的两个整数之和为:" << setw(8) << right << c << endl;
+	cout << "请输入一个小数:\n";
+	cin >> x;
+	y = 1;
+	//y没有初始化
+	z = 5 * x + y;
+	//fill()书写错误
+	cout << "5*x+y的值为:" << setw(10) << setfill('*') << setprecision(3) << z << endl;
+	//a多次声明
+	cin >> a;
+
+	return 0;
+}
