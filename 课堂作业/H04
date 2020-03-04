@@ -1,0 +1,19 @@
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	int m, n;
+	cin >> m >> n;
+	if (m > n)
+	{
+		cout << pow(m, n);
+	}
+	else
+	{
+		cout << pow(n,m);
+	}
+	return 0;
+}
