@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	const int sum = 20000;
+	int h, r, v, n;
+	cin >> h >> r;
+	v = 3 * r * r * h;
+	n = sum / v + 1;
+	cout << n;
+	return 0;
+}
