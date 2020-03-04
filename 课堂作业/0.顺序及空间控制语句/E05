@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	cout << "请输入距离：";
+	double distance;
+	cin >> distance;
+	if ((distance / 1.8) > 50)
+	{
+		cout << "骑车快";
+	}
+	else if((distance / 1.8) < 50)
+	{
+		cout << "步行快";
+	}
+	else
+	{
+		cout << "一样快";
+	}
+	return 0;
+}
