@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	cout << "请输入一个字母：";
+	char x;
+	cin >> x;
+	if (x >= 'a' && x <= 'z')
+	{
+		cout << (char)(x - 32);
+	}
+	else if (x >= 'A' && x <= 'Z')
+	{
+		cout << (char)(x + 32);
+	}
+	else
+	{
+		cout << x;
+	}
+	return 0;
+}
