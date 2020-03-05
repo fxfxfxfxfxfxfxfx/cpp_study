@@ -1,0 +1,18 @@
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	int n, i, sum;
+	cin >> n;
+	sum = 0;
+	while (n  > 0)
+	{
+		sum = sum + n % 10;
+		n = n / 10;
+	}
+	cout << setw(8) << setiosflags(ios::right) << sum;
+	return 0;
+}
