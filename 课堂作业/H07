@@ -1,0 +1,41 @@
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+int sum_factor(int n);
+using namespace std;
+
+int main()
+{
+	int n = 0;
+	for (int i = 1; i < 10; i++)
+	{
+		if (sum_factor(i) == i)
+		{
+			cout << setw(5) << i;
+			n++;
+		}
+		if (n % 5== 0)
+		{
+			cout << endl;
+		}
+	}
+	return 0;
+}
+
+int sum_factor( int n)
+{
+	int sum = 0;
+	int t;
+	while (n > 1)
+	{
+		for (int i = 2; i < n / 2 + 1; i++)
+		{
+			if (n % i == 0)
+			{
+				sum = sum + i;
+				n = n / i;
+			}
+		}
+	}
+	return sum;
+}
