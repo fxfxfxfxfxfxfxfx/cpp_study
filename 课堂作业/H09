@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+int hcf(int m, int n);
+int lcm(int m, int n);
+int main()
+{
+    int m, n;
+    cin >> m >> n;
+    cout << m << "," << n << "�����Լ���ǣ�" << hcf(m, n) << endl;
+    cout << m << "," << n << "����С�������ǣ�" << lcm(m, n) << endl;
+    return 0;
+}
+ 
+int hcf(int m, int n)
+{
+    int max_number = 1;
+    for (int i = 1; i < m; i++)
+    {
+        if (m % i == 0 && n % i == 0)
+        {
+            max_number = i;
+        }
+    }
+    return max_number;
+}
+
+int lcm(int m, int n)
+{
+    for (int i = m; i <= m * n; i++)
+    {
+        if (i % m == 0 && i % n == 0)
+        {
+            return i;
+        }
+    }
+}
