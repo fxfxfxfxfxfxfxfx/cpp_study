@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int exit_number(int number, int n);
+
+int main()
+{
+    int number, n;
+    cin >> number >> n;
+    if (exit_number(number,n) == 0)
+    {
+        cout << "???";
+    }
+    else
+    {
+        cout << "??";
+    }
+    return 0;
+}
+
+int exit_number(int number, int n)
+{
+    while (number / 10 != 0)
+    {
+        if (number % 10 == n)
+        {
+            return 1;
+        }
+        number = number / 10;
+    }
+    return 0;
+}
+
