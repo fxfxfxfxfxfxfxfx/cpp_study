@@ -1,0 +1,69 @@
+1、	编写一个函数，求两个整数的最大公因数HCF；编写一个函数，求两个整数的最小公倍数LCM。在主函数中输入两个整数，测试两个函数，并将测试结果输出到屏幕上。
+
+2、	编写一个函数，判断一个整数中是否含有某个数字？要求在主函数中输入整数和要检测的数字，测试该函数，并输出测试结果。
+
+3、	编写一个函数，将一个整数变成逆序整数，要求在主函数中输入整数，测试该函数，并输出测试结果。例如：321逆序后为123，320逆序后为23
+
+4、	定义两个重载函数Add，分别实现两个整数相加和两个实数相加，返回计算结果。在主函数中输入两个整数和两个实数，测试重载函数。
+
+5、	编写一个递归函数，判断一个整数是几位数，在主函数中输入整数，测试该函数，并输出测试结果。
+
+6、	编写一个函数，计算一个整数的所有偶数因子或奇数因子之和，默认计算所有偶数因子之和。在主函数中输入整数，测试该函数，并输出测试结果。
+
+7、	调试下面程序，指出错误位置及修改方法，并给出修改正确后的程序运行结果
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+/*
+ *@Brief: 统计某个数字在整数中出现的次数
+ *@Parm: int num: 整数
+ *       int digit: 数字
+ *@Reval:int : 出现的次数,-1表示digit不是个位数
+ */
+int CountsDigitInNum(int num, int digit)
+{
+    int count=0;
+
+    //参数合法性检查
+    if ( (digit<0) && (digit>10))
+        return -1;
+    if (num<0)
+        num = -num;
+
+    //如果num=digit，则直接返回,避免两个都为0时后面循环统计错误的情况
+    if (num = digit)
+        return 1;
+
+    while(num>0)
+    {
+        if (num%10 == digit)
+        {
+           ++count;
+           num /= 10;
+        }
+    }
+    return count;
+}
+
+int main()
+{
+    int num,digit,count;
+
+cout<<"请输入一个整数:" <<endl;
+cin>>num;
+cout<<"请输入一个数字:" <<endl; 
+cin<<digit;
+
+    for (int i=0; i<=num; i++)
+    {
+        count = CountsDigitInNum(i,digit);
+        cout<<"整数"<<i<<"中有"<<count<<"个"<<digit<<endl;
+    }
+
+    cout<<"整数11223311中有"<<CountsDigitInNum(11223311)<<"个1"<<endl;
+    
+    return 0;
+}
+
+
