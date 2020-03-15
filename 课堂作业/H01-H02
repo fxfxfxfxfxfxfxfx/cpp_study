@@ -1,0 +1,32 @@
+H01、编写一个程序，定义圆周率为3.1415926，分别输入半径为40和928.335，计算圆面积并根据下面要求分别将面积输出到屏幕上2次，输出要求如下：
+a)	宽度20列，右对齐，左边填充‘*’，保留3位小数。
+b)	宽度25列，左对齐，保留10位有效数字。
+
+
+H02、调试下面程序，指出错误位置及修改方法，并给出修改正确后的程序运行结果
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+int main()
+{	
+	int a,b;
+	double x,y,z;
+
+	cout<<"请输入两个整数:\n";
+	cin>>a>>b;
+	c=a+b;
+	cout<<"输入的两个整数之和为:"<<setw(8)<<right<<c<<endl;
+	cout<<"请输入一个小数:\n";
+	cin>>x;
+	z = 5*x+y;
+	cout<<"5*x+y的值为:"<<setw(10)<<fill('*')<<setprecision(3)<<z<<endl;
+
+	int a;
+	cin>>a;
+
+	return 0;
+}
+
+
