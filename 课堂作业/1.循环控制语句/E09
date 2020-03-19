@@ -1,0 +1,22 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	int n = 100;
+	int money = 300;
+	for (int i = 0; i <= 20 && 15 * i <= 300; i++)
+	{
+		for (int j = 0; j + i <= 100 && (15 * i + j * 9) <= 300; j++)
+		{
+			if ((15 * i + 9 * j + (100 - i - j)) == 300)
+			{
+				cout << i << ";" << j << ";" << 100 - i - j<<endl;
+			}
+		}
+	}
+	return 0;
+}
+
