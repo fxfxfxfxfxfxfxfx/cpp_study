@@ -1,41 +1,39 @@
-#include<iostream>
-#include<iomanip>
-#include<cmath>
-int sum_factor(int n);
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+int sum_divisor(int n);
 using namespace std;
 
 int main()
 {
-	int n = 0;
-	for (int i = 1; i < 10; i++)
+	int n = 1;
+	cout << "在求因子的过程中，我查询了百度百科，其将一个数的本身也定义为这个数的因子但由于题目中的表意与其相反我还是以题目中为准"<<endl;
+	for (int i = 1; i < 1001; i++)
 	{
-		if (sum_factor(i) == i)
+		if (i == sum_divisor(i))
 		{
 			cout << setw(5) << i;
 			n++;
 		}
-		if (n % 5== 0)
+		if (n % 5 == 0)
 		{
 			cout << endl;
 		}
 	}
 	return 0;
+	
 }
 
-int sum_factor( int n)
+int sum_divisor(int n)
 {
 	int sum = 0;
-	int t;
-	while (n > 1)
+	for (int i = 1; i < n; i++)
 	{
-		for (int i = 2; i < n / 2 + 1; i++)
+		if (n % i == 0)
 		{
-			if (n % i == 0)
-			{
-				sum = sum + i;
-				n = n / i;
-			}
+			sum = sum + i;
 		}
 	}
 	return sum;
 }
+
