@@ -1,0 +1,28 @@
+#include <iostream>
+#include<iomanip>
+using namespace std;
+int add(int a, int b);
+double add(double a, double b);
+int main()
+{
+	int m, n;
+	cout << "请输入两个整数：";
+	cin >> m >> n;
+	cout << add(m, n)<<endl;
+	double a, b;
+	cout << "请输入两个实数:";
+	cin >> a >> b;
+	cout << add(a, b);
+	return 0;
+}
+
+int add(int a, int b)
+{
+	return a + b;
+}
+
+double add(double a, double b)
+{
+	return a + b;
+}
+
