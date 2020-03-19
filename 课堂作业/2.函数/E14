@@ -1,0 +1,32 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+void printOut(int m);
+void printOut(double n);
+void printOut(char str);
+using namespace std;
+int main()
+{
+    int m;
+    double n;
+    char str;
+    cout << "请依次输入整数，实数，字符。"<<endl;
+    cin >> m >> n >> str; 
+    printOut(m);
+    printOut(n);
+    printOut(str);
+    return 0;
+}
+void printOut(int m)
+{
+    cout << setw(10) << setiosflags(ios::right) << m << endl;
+}
+void printOut(double n)
+{
+    cout << fixed << setprecision(4) << n << endl;
+}
+void printOut(char str)
+{
+    cout << setw(3) << setiosflags(ios::right) << str << endl;
+}
+
