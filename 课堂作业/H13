@@ -1,0 +1,25 @@
+#include <iostream>
+#include<iomanip>
+int digital_digits(int number, int n);
+using namespace std;
+
+int main()
+{
+	int number, n;
+	cin >> number;
+	n = 0;
+	cout << digital_digits(number, n);
+	return 0;
+}
+
+int digital_digits(int number, int n)
+{
+	if (number / 10 == 0)
+	{
+		return n + 1;
+	}
+	else
+	{
+		return digital_digits(number / 10, n + 1);
+	}
+}
