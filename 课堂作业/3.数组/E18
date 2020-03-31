@@ -1,0 +1,100 @@
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<string>
+void insert(int a[], int n);
+void uniq(int a[], int length);
+void display(int a[], int length);
+using namespace std;
+
+int main()
+{
+	int arry[10] = { 13,24,35,46,57,35,79,35,93 };
+	int n;
+	cin >> n;
+	insert(arry, n);
+	for (int i = 0; i < 10; i++)
+	{
+		cout << setw(4) << setiosflags(ios::right) << arry[i];
+	}
+	cout << endl;
+	uniq(arry, 10);
+	display(arry, 10);
+	return 0;
+}
+
+//插入数字
+void insert(int a[],int n)
+{
+	int temp_arry[10];
+	int m = 0;
+	for (int i = 0; i < 9; i++)
+	{
+		temp_arry[i] = a[i];
+	}
+	if (n <= a[0])
+	{
+		a[0] = n;
+		m = 0;
+	}
+	else if (n >= a[8])
+	{
+		a[9] = n;
+		m = 9;
+	}
+	else 
+	{
+		for (int i = 0; i < 9; i++)
+		{
+			if (n >= a[i] && n <= a[i + 1])
+			{
+				m = i+1;
+				a[m] = n;
+				break;
+			}
+		}
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		if (i<m)
+		{
+			a[i] = temp_arry[i];
+		}
+		else if(i==m)
+		{
+			continue;
+		}
+		else
+		{
+			a[i] = temp_arry[i - 1];
+		}
+	}
+}
+
+//去重
+void uniq( int a[], int length)
+{
+	for (int i = 0; i < length-1; i++)
+	{
+		for (int j = i+1; j < length; j++)
+		{
+			if (a[i] == a[j])
+			{
+				a[j] = -1;
+			}
+
+		}
+	}
+}
+
+//用于输出数组中有意义的数
+void display(int a[], int length)
+{
+	for (int i = 0; i < length; i++)
+	{
+		if (a[i] != -1)
+		{
+			cout << setw(4) << setiosflags(ios::right) << a[i];
+		}
+	}
+}
