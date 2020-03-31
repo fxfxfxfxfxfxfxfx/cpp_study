@@ -1,0 +1,52 @@
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+int min_number(int number[], int n);
+int max_number(int number[], int n);
+double average_number(int number[], int n);
+using namespace std;
+int main()
+{
+	int number[10];
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> number[i];
+	}
+	cout << max_number(number, 10) << " ";
+	cout << min_number(number, 10) << " ";
+	cout << fixed << setprecision(3) << average_number(number, 10);
+	return o;
+}
+int max_number(int number[],int n)
+{
+	int max = number[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (number[i] > max)
+		{
+			max = number[i];
+		}
+	}
+	return max;
+}
+int min_number(int number[], int n)
+{
+	int min = number[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (number[i] < min)
+		{
+			min = number[i];
+		}
+	}
+	return min;
+}
+double average_number(int number[], int n)
+{
+	double average=0.0;
+	for (int i = 0; i < n; i++)
+	{
+		average = average + number[i];
+	}
+	return average / n;
+}
