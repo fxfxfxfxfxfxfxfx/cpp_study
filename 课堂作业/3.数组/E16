@@ -1,0 +1,53 @@
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<string>
+#include<vector>
+char low_case(char letter);
+using namespace std;
+
+int main()
+{
+	int frequency[26] = { 0 };
+	string str;
+	cin >> str;
+	for (int i = 0; i < str.length(); i++)
+	{
+		frequency[low_case(str[i])-97]++;
+	}
+	while (true)
+	{
+		int max = 0;
+		int t = 0;
+		for (int i = 0; i < 26; i++)
+		{
+			if (frequency[i] > max)
+			{
+				t = i;
+				max = frequency[i];
+			}
+		}
+		if (max == 0)
+		{
+			break;
+		}
+		else
+		{
+			cout << (char)(t + 97) << " " << max << endl;
+		}
+		frequency[t] = 0;
+	}
+	return 0;
+}
+
+char low_case(char letter)
+{
+	if (letter >= 'a' && letter <= 'z')
+	{
+		return letter;
+	}
+	else
+	{
+		return (char)(letter + 32);
+	}
+}
