@@ -1,0 +1,39 @@
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<string>
+#include<vector>
+#include <algorithm>
+using namespace std;
+//void sort_dict(vector <string> &str, int n);
+
+
+int main()
+{
+	vector <string> str(12);
+	str = { "January","February","March","April","May","June","July","August","September","October","November","December" };
+	//sort_dict(str, 12);
+	sort(str.begin(), str.end());
+	for (int i = 0; i < 12; i++)
+	{
+		cout << str[i] << endl;
+	}
+	return 0;
+}
+/*void sort_dict(vector <string>&str,int n)
+{
+	string tem;
+	for (int i = 0; i < n - 1; i++)
+	{
+		for (int j = 0; j < n - 1 - i; j++)
+		{
+			if (str[j] > str[j + 1])
+			{
+				tem = str[j + 1];
+				str[j + 1] = str[j];
+				str[j] = tem;
+			}
+		}
+	}
+}
+*/
