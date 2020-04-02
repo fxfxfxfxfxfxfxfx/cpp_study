@@ -2,5 +2,5 @@
 初步学习c++，希望借助这个项目记录学习的经历。
 本项目中记录的一般有三类内容：
 a.实验课的代码
-b.[NOI]http://noi.openjudge.cn/
+b.[NOI]<http://noi.openjudge.cn/>
 c.在学习过程中遇到的难点和一些需要注意的点
