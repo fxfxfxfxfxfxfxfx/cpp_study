@@ -1,0 +1,93 @@
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <sstream>
+#include <algorithm>
+
+
+
+using namespace std;
+
+
+int readfile(const string& filename, vector<vector<string>>& words)
+{
+	string line, tem_word;
+	vector<string> tem_words;
+	ifstream openf(filename.c_str());
+	if (!openf)
+	{
+		return -2;
+	}
+	while (getline(openf, line))
+	{
+		tem_words.clear();
+		if (openf.bad())
+		{
+			return -1;
+		}
+		istringstream iss(line);
+		while (iss >> tem_word)
+		{
+			tem_words.push_back(tem_word);
+		}
+		words.push_back(tem_words);
+	}
+	return 0;
+}
+
+double word_value(string word)
+{
+	double sum = 0;
+	for (int i = 0; i < word.length(); i++)
+	{
+		sum = sum + (int)word[i];
+	}
+	return sum / word.length();
+}
+int writefile(const string& filename, string word, double value)
+{
+	ofstream out(filename.c_str(),ios::app);
+	if (!out)
+	{
+		return -2;
+	}
+	if (out.bad())
+	{
+		return -1;
+	}
+	out << word << " " << value << "\n";
+	return 0;
+}
+void display_max(vector<string>& words)
+{
+	string filename2 = "c:\\data\\wordValue.txt";
+	int max_index = 0;
+	double max_value = word_value(words[0]);
+	for (int i = 1; i < words.size(); i++)
+	{
+		if (word_value(words[i]) > max_value)
+		{
+			max_index = i;
+		}
+	}
+	writefile(filename2, words[max_index], word_value(words[max_index]));
+	cout << words[max_index] << " "
+		<< setprecision(3) << fixed << word_value(words[max_index]) << endl;
+}
+
+
+int main()
+{
+
+	vector<vector<string>> words;
+	string filename1 = "c:\\data\\data.txt";
+	readfile(filename1, words);
+	for (int i = 0; i < words.size(); i++)
+	{
+		display_max(words[i]);
+	}
+	return 0;
+}
